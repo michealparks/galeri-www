@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+
+<html lang='en-us'>
+<head>
+<meta charset='utf-8' />
+
+<script async src='index.js'></script>
+
+<style>
+@import 'https://fonts.googleapis.com/css?family=Lato:400,400i|Reem+Kufi';
+
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Reem Kufi', helvetica;
+}
+
+header {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.background-image,
+.background-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.background-mask {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 110px;
+  line-height: 1;
+}
+
+.title p {
+  margin: 0;
+  font-size: 24px;
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <div class='background-image'></div>
+    <div class='background-mask'></div>
+    <div class='title'>
+      <h1>Galeri</h1>
+      <p>A different type of feed.</p>
+    </div>
+  </header>
+</body>
+</html>

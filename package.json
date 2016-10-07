@@ -1,0 +1,25 @@
+{
+  "name": "galeri-www",
+  "version": "0.1.0",
+  "description": "The code behind galeri.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env PORT=1961 NODE_ENV=development node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michealparks/galeri-www.git"
+  },
+  "author": "Micheal Parks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michealparks/galeri-www/issues"
+  },
+  "homepage": "https://github.com/michealparks/galeri-www#readme",
+  "dependencies": {
+    "cross-env": "^3.1.1",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
+  }
+}
