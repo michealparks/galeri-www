@@ -1,2 +1,1 @@
-# galeri-www
-The code behind galeri.io
+# Galeri
