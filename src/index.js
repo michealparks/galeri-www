@@ -2,6 +2,7 @@
 const { get, set } = require('./components/storage')
 const { requestJSON } = require('./components/request')
 const getLatestVersion = require('./components/versions')
+const setPlatformText = require('./components/platform')
 const shuffle = require('./components/shuffle')
 const bg = document.querySelector('.background-image')
 const wikiAPI = 'https://en.wikipedia.org/w/api.php'
@@ -18,6 +19,7 @@ if (!storedImages || !storedImages.length) {
 }
 
 getLatestVersion()
+setPlatformText()
 
 function onWikiError () {
   if (++wikiErrCount > wikiErrTimeout) {
