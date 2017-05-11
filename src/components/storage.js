@@ -1,22 +1,21 @@
-/* global localStorage */
-const noStore = !storageAvailable('localStorage')
+module.exports = {get: get, set: set}
 
-function storageAvailable (type) {
+/* global localStorage */
+const noStore = !(function storageAvailable (type) {
   try {
-    const storage = window[type]
-    const x = '__storage_test__'
-    storage.setItem(x, x)
-    storage.removeItem(x)
+    const x = '__x__'
+    localStorage.setItem(x, x)
+    localStorage.removeItem(x)
     return true
-  } catch (e) { return false }
-}
+  } catch (e) {
+    return false
+  }
+})()
 
 function get (key) {
-  return noStore ? null : JSON.parse(localStorage.getItem(key))
+  return noStore ? undefined : JSON.parse(localStorage.getItem(key))
 }
 
 function set (key, val) {
-  return noStore ? null : localStorage.setItem(key, JSON.stringify(val))
+  return noStore ? undefined : localStorage.setItem(key, JSON.stringify(val))
 }
-
-module.exports = { get, set }

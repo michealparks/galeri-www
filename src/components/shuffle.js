@@ -1,3 +1,5 @@
+module.exports = shuffle
+
 function shuffle (array) {
   for (let i = array.length - 1, j, t; i > 0; --i) {
     j = Math.floor(Math.random() * (i + 1))
@@ -6,5 +8,3 @@ function shuffle (array) {
     array[j] = t
   }
 }
-
-module.exports = shuffle

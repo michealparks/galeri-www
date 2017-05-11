@@ -1,14 +1,16 @@
-let text = {
-  'MacIntel': 'Mac',
-  'Win32': 'PC'
-}[navigator.platform]
+module.exports = setPlatformText
 
 function setPlatformText () {
-  if (text) return Array.prototype.slice.call(
-    document.getElementsByClassName('platform')
-  ).forEach(el => {
-    el.textContent = text
-  })
-}
+  const text = {
+    'MacIntel': 'Mac',
+    'Win32': 'PC'
+  }[navigator.platform]
 
-module.exports = setPlatformText
+  if (!text) return
+
+  const els = [].slice.call(document.getElementsByClassName('platform'))
+
+  for (let i = 0, l = els.length; i < l; ++i) {
+    els[i].textContent = text
+  }
+}

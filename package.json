@@ -1,6 +1,6 @@
 {
   "name": "galeri-www",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The code behind galeri.io",
   "main": "index.js",
   "scripts": {
@@ -26,19 +26,17 @@
   },
   "homepage": "https://github.com/michealparks/galeri-www#readme",
   "devDependencies": {
-    "cross-env": "^3.1.1",
-    "express": "^4.14.0",
-    "morgan": "^1.7.0",
-    "babel-loader": "^6.2.5",
-    "babel-plugin-transform-strict-mode": "^6.11.3",
-    "babel-preset-es2015": "^6.16.0",
-    "babili-webpack-plugin": "0.0.5",
-    "concurrently": "^3.1.0",
-    "gh-pages": "^0.11.0",
-    "inline-source": "^5.1.1",
-    "json-loader": "^0.5.4",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.24.1",
+    "babel-plugin-transform-strict-mode": "^6.24.1",
+    "concurrently": "^3.4.0",
+    "cross-env": "^4.0.0",
+    "express": "^4.15.2",
+    "gh-pages": "^1.0.0",
+    "inline-source": "^5.2.2",
     "stylus": "^0.54.5",
-    "webpack": "^1.13.2",
-    "webpack-validator": "^2.2.9"
+    "uglifyjs-webpack-plugin": "^0.4.3",
+    "webpack": "^2.5.1",
+    "webpack-validator": "^3.0.0"
   }
 }

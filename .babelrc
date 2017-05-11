@@ -1,4 +1,8 @@
 {
-  "presets": ["es2015"],
-  "plugins": ["transform-strict-mode"]
+  "plugins": [
+    "transform-strict-mode",
+    ["transform-es2015-block-scoping", {
+      "throwIfClosureRequired": true
+    }]
+  ]
 }

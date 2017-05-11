@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { resolve } = require('path')
+const {resolve} = require('path')
 const inline = require('inline-source')
 const source = fs.createReadStream('src/index.html')
 

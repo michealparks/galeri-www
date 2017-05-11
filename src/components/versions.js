@@ -1,10 +1,13 @@
-const { requestJSON } = require('./request')
-const url = 'https://api.github.com/repos/michealparks/galeri-www/releases/latest'
-const versionEl = document.getElementById('version')
-const downloads = document.getElementsByClassName('downloads')
+module.exports = getLatestVersion
+
+const request = require('./request')
 
 function getMacDownloadURL (v) {
-  return `https://github.com/michealparks/galeri-www/releases/download/${v}/Galeri-${v}.dmg`
+  return 'https://github.com/michealparks/galeri-www/releases/download/' +
+    v +
+    '/Galeri-' +
+    v +
+    '.dmg'
 }
 
 function onVersionErr () {
@@ -12,8 +15,11 @@ function onVersionErr () {
 }
 
 function onVersionLoad () {
+  const versionEl = document.getElementById('version')
+  const downloads = document.getElementsByClassName('downloads')
+
   versionEl.href = this.response.html_url
-  versionEl.textContent = `Version ${this.response.tag_name.slice(1)}`
+  versionEl.textContent = 'Version ' + this.response.tag_name.slice(1)
 
   const macURL = getMacDownloadURL(this.response.tag_name)
 
@@ -24,7 +30,7 @@ function onVersionLoad () {
 }
 
 function getLatestVersion () {
-  return requestJSON(url, onVersionErr, onVersionLoad)
-}
+  const url = 'https://api.github.com/repos/michealparks/galeri-www/releases/latest'
 
-module.exports = getLatestVersion
+  return request(url, onVersionErr, onVersionLoad)
+}
