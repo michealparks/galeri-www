@@ -17,13 +17,12 @@
 <meta property='og:title' content='Galeri' />
 <meta property='og:description' content='A perpetual artwork streaming machine. Download Galeri to bring art from museums around the world to any screen.' />
 
-<link href="https://fonts.googleapis.com/css?family=Lato|Reem+Kufi" rel="stylesheet">
-<style type="text/css">.text-center{text-align:center}body,header{width:100%;height:100%}body{margin:0;font-family:'Reem Kufi',helvetica;position:absolute}header{display:flex;position:relative;align-items:center;align-content:center;justify-content:center;background-color:#000}header a:hover{text-decoration:underline}.downloads a,header a{color:#fff!important}.downloads a,.downloads a:hover,header a{text-decoration:none!important}header .issues,header .see-more,header .version{position:absolute;bottom:20px;font-size:17px}header .version{left:20px}header .see-more{left:calc(50% - 13px);fill:#fff;stroke:#fff;height:26px;width:26px}header .issues{right:20px}.background-image,.background-mask{position:absolute;left:0;top:0;width:100%;height:100%}.background-image{background-size:cover;background-position:center}.background-mask{background-color:rgba(0,0,0,.4)}.title{z-index:1;color:#fff}.title h1{margin:0;font-size:110px;font-weight:300;line-height:1}.title p{margin:0;font-size:24px}.downloads,section{display:flex;justify-content:center}.downloads__icon{width:30px;height:30px;padding:16px;margin:10px;border-radius:100%;background-color:rgba(130,141,255,.61);fill:#fff;stroke:#fff;transition:background-color 300ms,transform 300ms;transform:scale(.95)}.downloads__icon:hover{background-color:rgba(130,141,255,.8);transform:scale(1.05)}main h2,main p,main small{font-weight:200;letter-spacing:.4px;font-family:Helvetica Neue,Lato,-apple-system,BlinkMacSystemFont,Helvetica}section{flex-wrap:wrap;align-items:center;padding:60px 30px 0;color:#333}section h2{font-size:40px;font-weight:100;margin-top:0}section p{line-height:1.4}.block{width:500px;max-width:100%;margin:20px}.block--lg{width:800px}.thanks{width:300px;text-align:center;margin:auto;padding:60px 0 10px;line-height:1.2}</style>
+<style type="text/css">@font-face{font-family:'Reem Kufi';src:local("Reem Kufi"),url(reem-kufi.ttf)}.text-center{text-align:center}body,header{width:100%;height:100%}body{margin:0;font-family:'Reem Kufi';position:absolute}@media (min-width:700px){body{font-size:120%}}@media (min-width:1200px){body{font-size:140%}}header{display:flex;position:relative;align-items:center;align-content:center;justify-content:center;background-color:#000}header a:hover{text-decoration:underline}.downloads a,header a{color:#fff!important}.downloads a,.downloads a:hover,header a{text-decoration:none!important}header .issues,header .see-more,header .version{position:absolute;bottom:20px;font-size:17px}header .version{left:20px}header .see-more{left:calc(50% - 13px);fill:#fff;stroke:#fff;height:26px;width:26px}header .issues{right:20px}.background-image,.background-mask{position:absolute;left:0;top:0;width:100%;height:100%}.background-image{background-size:cover;background-position:center}.background-mask{background-color:rgba(0,0,0,.4)}.title{z-index:1;color:#fff}.title h1{margin:0;font-size:4em;font-weight:300;line-height:1}.title p{margin:0;font-size:1.2em}.downloads{display:flex;justify-content:center}.downloads__icon{width:30px;height:30px;padding:16px;margin:10px;border-radius:100%;background-color:rgba(130,141,255,.61);fill:#fff;stroke:#fff;transition:background-color 300ms,transform 300ms;transform:scale(.95)}.downloads__icon:hover{background-color:rgba(130,141,255,.8);transform:scale(1.05)}main h2,main p,main small{font-weight:200;letter-spacing:.4px;font-family:Helvetica Neue,Lato,-apple-system,BlinkMacSystemFont,Helvetica}.section{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;padding:40px 20px;color:#333}.section h2{font-size:1.9em;font-weight:100;margin-top:0}.section p{line-height:1.6;font-size:.75em}@media (max-width:800px){.section p{font-size:1em}}.section--bg-image,.section--dark{background-color:#333;color:#fff}.section--bg-image{position:relative;padding:80px 20px;background-size:cover;background-position:center}.section--bg-image .block{z-index:1}.section--bg-image .background-mask{background-color:rgba(0,0,0,.5)}.section--bg-image h2,.section--bg-image p{max-width:450px}.section--bg-image a{color:#bbb!important}.block{width:500px;max-width:100%;margin:20px}.block--lg{width:800px}.thanks{width:300px;text-align:center;margin:auto;padding:0 0 20px;line-height:.9}.thanks small{font-size:.6em}</style>
 </head>
 
 <body>
   <header>
-    <div class='background-image'></div>
+    <div class='background-image' id='background-image'></div>
     <div class='background-mask'></div>
     <div class='title text-center'>
       <h1>Galeri</h1>
@@ -58,7 +57,7 @@
     </small>
   </header>
   <main>
-    <section>
+    <section class='section section--dark'>
       <div class='block'>
         <h2>Galeri turns your <span class='platform'>computer</span>'s background into an art exhibit.</h2>
 
@@ -71,14 +70,15 @@
       </div>
     </section>
 
-    <section>
+    <section class='section section--bg-image' id='section-2'>
+      <div class='background-mask'></div>
       <div class='block block--lg'>
         <h2>Galeri is in <i>early</i> Beta.</h2>
         <p>We've only begun work on Galeri but would love for people to start trying it out! Let us know about new use cases (perhaps like hacking together a raspberry pi and a display mounted on an ornate frame to make an ever-changing painting?). We'd also love to hear about any of your ideas or issues on our <a href='https://github.com/michealparks/galeri-www/issues' target='_tab'>Github</a>.</p>
       </div>
     </section>
 
-    <section>
+    <section class='section section--dark'>
       <div class='block block--lg'>
         <h2>No Cost, Low Footprint.</h2>
         <p>Galeri is (obviously) free, and always will be. It aims to follow the spirit of its sources by never putting up any sort of gateway or obstacle between you and something that should never be used for profit.</p>
@@ -87,7 +87,7 @@
       </div>
     </section>
 
-    <section>
+    <section class='section'>
       <div>
         <h2>Download Galeri</h2>
         <div class='downloads'>
@@ -109,7 +109,7 @@
     </div>
   </main>
 
-  <script async>!function(t){function e(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,e),o.l=!0,o.exports}var n={};e.m=t,e.c=n,e.i=function(t){return t},e.d=function(t,n,r){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:r})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="",e(e.s=5)}([function(t,e,n){"use strict";function r(t,e,n){var r=new window.XMLHttpRequest;r.open("GET",t,!0),r.responseType="json",r.onerror=e,r.onload=n,r.send()}t.exports=r},function(t,e,n){"use strict";function r(){var t={MacIntel:"Mac",Win32:"PC"}[navigator.platform];if(t)for(var e=[].slice.call(document.getElementsByClassName("platform")),n=0,r=e.length;n<r;++n)e[n].textContent=t}t.exports=r},function(t,e,n){"use strict";function r(t){for(var e,n,r=t.length-1;r>0;--r)e=Math.floor(Math.random()*(r+1)),n=t[r],t[r]=t[e],t[e]=n}t.exports=r},function(t,e,n){"use strict";function r(t){return a?void 0:JSON.parse(localStorage.getItem(t))}function o(t,e){return a?void 0:localStorage.setItem(t,JSON.stringify(e))}t.exports={get:r,set:o};var a=!function(t){try{var e="__x__";return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(t){return!1}}()},function(t,e,n){"use strict";function r(t){return"https://github.com/michealparks/galeri-www/releases/download/"+t+"/Galeri-"+t+".dmg"}function o(){}function a(){var t=document.getElementById("version"),e=document.getElementsByClassName("downloads");t.href=this.response.html_url,t.textContent="Version "+this.response.tag_name.slice(1);for(var n,o=r(this.response.tag_name),a=0,i=e.length;a<i;++a)n=e[a],n.querySelector("#download-mac").href=o}function i(){return s("https://api.github.com/repos/michealparks/galeri-www/releases/latest",o,a)}t.exports=i;var s=n(0)},function(t,e,n){"use strict";function r(){return c("https://en.wikipedia.org/w/api.php?action=parse&prop=text&page=Wikipedia:Featured%20pictures/Artwork/Paintings&format=json&origin=*",o,a)}function o(){if(++m>g)return r()}function a(){var t=document.createElement("template");t.innerHTML=this.response.parse.text["*"];for(var e=t.content.querySelectorAll(".gallerybox img"),n=[],r=e.length-1;r>-1;--r)n.push("https:"+e[r].getAttribute("src"));p(n),i(n)}function i(t){var e=t.pop(),n=new Image;n.onload=function(){document.getElementsByClassName("background-image")[0].setAttribute("style",'background-image:url("'+n.src+'")')},n.onerror=function(){i(t)},n.src=e.replace(/[0-9]{3,4}px/,"2000px"),s.set("images",t)}var s=n(3),c=n(0),u=n(4),l=n(1),p=n(2),f=s.get("images"),g=5,m=0;null===f||0===f.length?r():i(f),u(),l()}]);</script>
+  <script async>!function(t){function e(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,e),o.l=!0,o.exports}var n={};e.m=t,e.c=n,e.i=function(t){return t},e.d=function(t,n,r){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:r})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="",e(e.s=5)}([function(t,e,n){"use strict";function r(t,e,n){var r=new window.XMLHttpRequest;r.open("GET",t,!0),r.responseType="json",r.onerror=e,r.onload=n,r.send()}t.exports=r},function(t,e,n){"use strict";function r(){var t={MacIntel:"Mac",Win32:"PC"}[navigator.platform];if(t)for(var e=[].slice.call(document.getElementsByClassName("platform")),n=0,r=e.length;n<r;++n)e[n].textContent=t}t.exports=r},function(t,e,n){"use strict";function r(t){for(var e,n,r=t.length-1;r>0;--r)e=Math.floor(Math.random()*(r+1)),n=t[r],t[r]=t[e],t[e]=n}t.exports=r},function(t,e,n){"use strict";function r(t){return i?void 0:JSON.parse(localStorage.getItem(t))}function o(t,e){return i?void 0:localStorage.setItem(t,JSON.stringify(e))}t.exports={get:r,set:o};var i=!function(t){try{var e="__x__";return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(t){return!1}}()},function(t,e,n){"use strict";function r(t){return"https://github.com/michealparks/galeri-www/releases/download/"+t+"/Galeri-"+t+".dmg"}function o(){}function i(){var t=document.getElementById("version"),e=document.getElementsByClassName("downloads");t.href=this.response.html_url,t.textContent="Version "+this.response.tag_name.slice(1);for(var n,o=r(this.response.tag_name),i=0,a=e.length;i<a;++i)n=e[i],n.querySelector("#download-mac").href=o}function a(){return s("https://api.github.com/repos/michealparks/galeri-www/releases/latest",o,i)}t.exports=a;var s=n(0)},function(t,e,n){"use strict";function r(){return c("https://en.wikipedia.org/w/api.php?action=parse&prop=text&page=Wikipedia:Featured%20pictures/Artwork/Paintings&format=json&origin=*",o,i)}function o(){if(++m>g)return r()}function i(){var t=document.createElement("template");t.innerHTML=this.response.parse.text["*"];for(var e=t.content.querySelectorAll(".gallerybox img"),n=[],r=e.length-1;r>-1;--r)n.push("https:"+e[r].getAttribute("src"));p(n),a(n,"background-image",function(){a(n,"section-2")})}function a(t,e,n){var r=t.pop(),o=new Image;o.onload=function(){document.getElementById(e).setAttribute("style",'background-image:url("'+o.src+'")')},o.onerror=function(){a(t,e)},o.src=r.replace(/[0-9]{3,4}px/,"2000px"),s.set("images",t),n&&n()}var s=n(3),c=n(0),u=n(4),l=n(1),p=n(2),f=s.get("images"),g=5,m=0;null===f||0===f.length?r():a(f,"background-image",function(){a(f,"section-2")}),u(),l()}]);</script>
 
   <span style='display:none'>
     <svg id="icon-arrow-down" viewBox="0 0 24 24">
