@@ -1,3 +1,7 @@
+@font-face
+  font-family: 'Reem Kufi'
+  src: local("Reem Kufi"), url("reem-kufi.ttf")
+
 .text-center
   text-align: center
 
@@ -6,7 +10,13 @@ body
   height: 100%
   width: 100%
   margin: 0
-  font-family: 'Reem Kufi', helvetica
+  font-family: 'Reem Kufi'
+  
+  @media(min-width: 700px)
+    font-size: 120%
+  
+  @media(min-width: 1200px)
+    font-size: 140%
 
 header
   display: flex
@@ -69,13 +79,13 @@ header .issues
 
 .title h1
   margin: 0
-  font-size: 110px
+  font-size: 4em
   font-weight: 300
   line-height: 1
 
 .title p
   margin: 0
-  font-size: 24px
+  font-size: 1.2em
 
 .downloads
   display: flex
@@ -104,21 +114,49 @@ main
     letter-spacing: 0.4px
     font-family: Helvetica Neue, Lato, -apple-system, BlinkMacSystemFont, Helvetica
 
-section
+.section
   display: flex
   flex-wrap: wrap
   justify-content: center
   align-items: center
-  padding: 60px 30px 0 30px
+  padding: 40px 20px
   color: #333
 
   h2
-    font-size: 40px
+    font-size: 1.9em
     font-weight: 100
     margin-top: 0
 
   p
-    line-height: 1.4
+    line-height: 1.6
+    font-size: 0.75em
+    
+    @media(max-width: 800px)
+      font-size: 1em
+      
+.section--dark
+  background-color: #333
+  color: #fff
+
+.section--bg-image
+  position: relative
+  padding: 80px 20px
+  background-color: #333
+  background-size: cover
+  background-position: center
+  color: #fff
+  
+  .block
+    z-index: 1
+    
+  .background-mask
+    background-color: rgba(0,0,0,0.5)
+  
+  h2, p
+    max-width: 450px
+    
+  a
+    color: #bbb !important
 
 .block
   width: 500px
@@ -132,5 +170,8 @@ section
   width: 300px
   text-align: center
   margin:auto
-  padding:60px 0 10px 0
-  line-height: 1.2
+  padding: 0 0 20px 0
+  line-height: 0.9
+  
+  small
+    font-size: 0.6em

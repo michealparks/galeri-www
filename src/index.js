@@ -11,7 +11,9 @@ let wikiErrCount = 0
 if (storedImages === null || storedImages.length === 0) {
   getWikiJSON()
 } else {
-  setBackgroundImage(storedImages)
+  setBackgroundImage(storedImages, 'background-image', function () {
+    setBackgroundImage(storedImages, 'section-2')
+  })
 }
 
 getLatestVersion()
@@ -40,23 +42,28 @@ function onWikiLoad () {
   }
 
   shuffle(images)
-  setBackgroundImage(images)
+
+  setBackgroundImage(images, 'background-image', function () {
+    setBackgroundImage(images, 'section-2')
+  })
 }
 
-function setBackgroundImage (images) {
+function setBackgroundImage (images, target, next) {
   const random = images.pop()
   const img = new Image()
 
   img.onload = function () {
-    const bg = document.getElementsByClassName('background-image')[0]
-    bg.setAttribute('style', 'background-image:url("' + img.src + '")')
+    document.getElementById(target)
+      .setAttribute('style', 'background-image:url("' + img.src + '")')
   }
 
   img.onerror = function () {
-    setBackgroundImage(images)
+    setBackgroundImage(images, target)
   }
 
   img.src = random.replace(/[0-9]{3,4}px/, '2000px')
 
   storage.set('images', images)
+
+  if (next) next()
 }

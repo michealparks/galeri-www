@@ -17,13 +17,12 @@
 <meta property='og:title' content='Galeri' />
 <meta property='og:description' content='A perpetual artwork streaming machine. Download Galeri to bring art from museums around the world to any screen.' />
 
-<link href="https://fonts.googleapis.com/css?family=Lato|Reem+Kufi" rel="stylesheet">
 <link inline href='index.css' rel='stylesheet' type='text/css' />
 </head>
 
 <body>
   <header>
-    <div class='background-image'></div>
+    <div class='background-image' id='background-image'></div>
     <div class='background-mask'></div>
     <div class='title text-center'>
       <h1>Galeri</h1>
@@ -58,7 +57,7 @@
     </small>
   </header>
   <main>
-    <section>
+    <section class='section section--dark'>
       <div class='block'>
         <h2>Galeri turns your <span class='platform'>computer</span>'s background into an art exhibit.</h2>
 
@@ -71,14 +70,15 @@
       </div>
     </section>
 
-    <section>
+    <section class='section section--bg-image' id='section-2'>
+      <div class='background-mask'></div>
       <div class='block block--lg'>
         <h2>Galeri is in <i>early</i> Beta.</h2>
         <p>We've only begun work on Galeri but would love for people to start trying it out! Let us know about new use cases (perhaps like hacking together a raspberry pi and a display mounted on an ornate frame to make an ever-changing painting?). We'd also love to hear about any of your ideas or issues on our <a href='https://github.com/michealparks/galeri-www/issues' target='_tab'>Github</a>.</p>
       </div>
     </section>
 
-    <section>
+    <section class='section section--dark'>
       <div class='block block--lg'>
         <h2>No Cost, Low Footprint.</h2>
         <p>Galeri is (obviously) free, and always will be. It aims to follow the spirit of its sources by never putting up any sort of gateway or obstacle between you and something that should never be used for profit.</p>
@@ -87,7 +87,7 @@
       </div>
     </section>
 
-    <section>
+    <section class='section'>
       <div>
         <h2>Download Galeri</h2>
         <div class='downloads'>
