@@ -4,15 +4,7 @@
   "description": "The code behind galeri.io",
   "main": "index.js",
   "scripts": {
-    "tasks:dev": "cross-env NODE_ENV=development node tasks",
-    "tasks:prod": "cross-env NODE_ENV=production node tasks",
-    "webpack:dev": "cross-env NODE_ENV=development webpack --watch --progress --colors",
-    "webpack:prod": "cross-env NODE_ENV=production webpack",
-    "styl:dev": "stylus --watch src/index.styl --out public/index.css",
-    "styl:prod": "stylus --compress < src/index.styl > public/index.css",
-    "dev": "concurrently \"npm run tasks:dev\" \"node server\" \"npm run styl:dev\" \"npm run webpack:dev\"",
-    "prod": "npm run build && NODE_ENV=production node server",
-    "build": "npm run webpack:prod && npm run styl:prod && npm run tasks:prod",
+    "start": "node server",
     "deploy": "npm run build && gh-pages -d public"
   },
   "repository": {
@@ -26,17 +18,7 @@
   },
   "homepage": "https://github.com/michealparks/galeri-www#readme",
   "devDependencies": {
-    "babel-loader": "^7.0.0",
-    "babel-plugin-transform-es2015-block-scoping": "^6.24.1",
-    "babel-plugin-transform-strict-mode": "^6.24.1",
-    "concurrently": "^3.4.0",
-    "cross-env": "^5.0.0",
     "express": "^4.15.3",
-    "gh-pages": "^1.0.0",
-    "inline-source": "^5.2.2",
-    "stylus": "^0.54.5",
-    "uglifyjs-webpack-plugin": "^0.4.3",
-    "webpack": "^2.6.1",
-    "webpack-validator": "^3.0.0"
+    "gh-pages": "^1.0.0"
   }
 }
