@@ -1,6 +1,6 @@
 'use strict'
 
-const {join} = require('path')
+const { join } = require('path')
 const express = require('express')
 const app = express()
 

@@ -3,7 +3,6 @@
 <html lang='en-us'>
 
 <head>
-  <!-- good open standard stuff -->
   <meta charset='utf-8' />
   <title>Galeri</title>
   <meta name='description' content='A perpetual artwork streaming app.' />
@@ -11,7 +10,25 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-  <!-- :( -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Galeri",
+    "operatingSystem": "Windows, MacOS, Linux, Chrome OS",
+    "applicationCategory": "EducationalApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "ratingCount": "1"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0"
+    }
+  }
+  </script>
+
   <meta name="msvalidate.01" content="161DB9FA836FD1416B1A4CBD6A686D63" />
   <meta property='og:type' content='website' />
   <meta property='og:site_name' content='Galeri' />
@@ -192,7 +209,6 @@ const getLatestVersion = () => {
 
 getWikiJSON()
 getLatestVersion()
-
 </script>
 
 </html>

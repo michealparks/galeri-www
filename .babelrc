@@ -1,8 +1,0 @@
-{
-  "plugins": [
-    "transform-strict-mode",
-    ["transform-es2015-block-scoping", {
-      "throwIfClosureRequired": true
-    }]
-  ]
-}
