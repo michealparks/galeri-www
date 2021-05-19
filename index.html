@@ -36,10 +36,35 @@
   <meta property='og:description'
     content='A perpetual artwork streaming machine. Download Galeri to bring art from museums around the world to any screen.' />
 
-  <link inline href='index.css' rel='stylesheet' type='text/css' />
+  <script type="module" async src="src/index.ts"></script>
+  <link href='src/index.css' rel='stylesheet' type='text/css' />
 </head>
 
 <body>
+  <span style='display:none'>
+    <svg id="icon-arrow-down" viewBox="0 0 24 24">
+      <path
+        d="M12 2q0.414 0 0.707 0.293t0.293 0.707v15.586l5.289-5.297q0.289-0.289 0.711-0.289 0.43 0 0.715 0.285t0.285 0.715q0 0.422-0.289 0.711l-7 7q-0.289 0.289-0.711 0.289t-0.711-0.289l-7-7q-0.289-0.289-0.289-0.711 0-0.43 0.285-0.715t0.715-0.285q0.422 0 0.711 0.289l5.289 5.297v-15.586q0-0.414 0.293-0.707t0.707-0.293z">
+      </path>
+    </svg>
+    <svg id="icon-appleinc" viewBox="0 0 34 34">
+      <path
+        d="M24.734 17.003c-0.040-4.053 3.305-5.996 3.454-6.093-1.88-2.751-4.808-3.127-5.851-3.171-2.492-0.252-4.862 1.467-6.127 1.467-1.261 0-3.213-1.43-5.28-1.392-2.716 0.040-5.221 1.579-6.619 4.012-2.822 4.897-0.723 12.151 2.028 16.123 1.344 1.944 2.947 4.127 5.051 4.049 2.026-0.081 2.793-1.311 5.242-1.311s3.138 1.311 5.283 1.271c2.18-0.041 3.562-1.981 4.897-3.931 1.543-2.255 2.179-4.439 2.216-4.551-0.048-0.022-4.252-1.632-4.294-6.473zM20.705 5.11c1.117-1.355 1.871-3.235 1.665-5.11-1.609 0.066-3.559 1.072-4.713 2.423-1.036 1.199-1.942 3.113-1.699 4.951 1.796 0.14 3.629-0.913 4.747-2.264z">
+      </path>
+    </svg>
+    <svg id="icon-chrome" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="4" />
+      <line x1="21.17" y1="8" x2="12" y2="8" />
+      <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+      <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+    </svg>
+    <svg id="icon-windows" viewBox="0 0 32 32">
+    <path d="M0.011 16l-0.011-9.752 12-1.63v11.382zM14 4.328l15.996-2.328v14h-15.996zM30 18l-0.004 14-15.996-2.25v-11.75zM12 29.495l-11.99-1.644-0.001-9.851h11.991z"></path>
+    </svg>
+  </span>
+
   <header>
     <div class='background-image' id='background-image'></div>
     <div class='background-mask'></div>
@@ -51,6 +76,11 @@
         <a aria-label="install on mac" id='download-mac' href=''>
           <svg class="downloads__icon icon-apple">
             <use xlink:href="#icon-appleinc"></use>
+          </svg>
+        </a>
+        <a aria-label="install on windows" id='download-win' href=''>
+          <svg class="downloads__icon icon-windows">
+            <use xlink:href="#icon-windows"></use>
           </svg>
         </a>
         <a aria-label="install on chrome" id='download-chrome' target='_tab' href='https://chrome.google.com/webstore/detail/galeri/mgpkakjlehkaoaneflejkcjbfmilgbao'>
@@ -123,6 +153,11 @@
               <use xlink:href="#icon-appleinc">
             </svg>
           </a>
+          <a aria-label="install on windows" id='download-win' href=''>
+            <svg class="downloads__icon icon-windows">
+              <use xlink:href="#icon-windows"></use>
+            </svg>
+          </a>
           <a aria-label='Install on chrome' id='download-chrome' target='_tab' href='https://chrome.google.com/webstore/detail/galeri/mgpkakjlehkaoaneflejkcjbfmilgbao'>
             <svg class="downloads__icon icon-chrome">
               <use xlink:href="#icon-chrome"></use>
@@ -135,80 +170,8 @@
             Hewitt Museum of Design for providing the open material that make projects like this possible.</small>
         </footer>
       </div>
-
-      
     </section>
   </main>
-
-  <span style='display:none'>
-    <svg id="icon-arrow-down" viewBox="0 0 24 24">
-      <path
-        d="M12 2q0.414 0 0.707 0.293t0.293 0.707v15.586l5.289-5.297q0.289-0.289 0.711-0.289 0.43 0 0.715 0.285t0.285 0.715q0 0.422-0.289 0.711l-7 7q-0.289 0.289-0.711 0.289t-0.711-0.289l-7-7q-0.289-0.289-0.289-0.711 0-0.43 0.285-0.715t0.715-0.285q0.422 0 0.711 0.289l5.289 5.297v-15.586q0-0.414 0.293-0.707t0.707-0.293z">
-      </path>
-    </svg>
-    <svg id="icon-appleinc" viewBox="0 0 34 34">
-      <path
-        d="M24.734 17.003c-0.040-4.053 3.305-5.996 3.454-6.093-1.88-2.751-4.808-3.127-5.851-3.171-2.492-0.252-4.862 1.467-6.127 1.467-1.261 0-3.213-1.43-5.28-1.392-2.716 0.040-5.221 1.579-6.619 4.012-2.822 4.897-0.723 12.151 2.028 16.123 1.344 1.944 2.947 4.127 5.051 4.049 2.026-0.081 2.793-1.311 5.242-1.311s3.138 1.311 5.283 1.271c2.18-0.041 3.562-1.981 4.897-3.931 1.543-2.255 2.179-4.439 2.216-4.551-0.048-0.022-4.252-1.632-4.294-6.473zM20.705 5.11c1.117-1.355 1.871-3.235 1.665-5.11-1.609 0.066-3.559 1.072-4.713 2.423-1.036 1.199-1.942 3.113-1.699 4.951 1.796 0.14 3.629-0.913 4.747-2.264z">
-      </path>
-    </svg>
-    <svg id="icon-chrome" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-      stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10" />
-      <circle cx="12" cy="12" r="4" />
-      <line x1="21.17" y1="8" x2="12" y2="8" />
-      <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
-      <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
-    </svg>
-  </span>
 </body>
-
-<script type="module">
-const request = (url, onload) => {
-  const req = new window.XMLHttpRequest()
-  req.open('GET', url, true)
-  req.responseType = 'json'
-  req.onload = onload
-  req.send()
-}
-
-const getWikiJSON = () => {
-  const wikiAPI = 'https://en.wikipedia.org/w/api.php'
-  const wikiURL = `${wikiAPI}?action=parse&prop=text&page=Wikipedia:Featured%20pictures/Artwork/Paintings&format=json&origin=*`
-  return request(wikiURL, function () {
-    const template = document.createElement('template')
-    template.innerHTML = this.response.parse.text['*']
-    const imgs = template.content.querySelectorAll('.gallerybox img')
-    const r1 = Math.floor(Math.random() * imgs.length)
-    const r2 = Math.floor(Math.random() * imgs.length)
-    setBackgroundImage(imgs[r1].src.replace(/[0-9]{3,4}px/, '2000px'), 'background-image')
-    setBackgroundImage(imgs[r2].src.replace(/[0-9]{3,4}px/, '2000px'), 'section-2')
-  })
-}
-
-const setBackgroundImage = (src, target) => {
-  document.getElementById(target).style = `background-image:url("${src}")`
-}
-
-const getMacDownloadURL = (v) => {
-  return `https://github.com/michealparks/galeri-www/releases/download/${v}/Galeri-${v}.dmg`
-}
-
-const getLatestVersion = () => {
-  const url = 'https://api.github.com/repos/michealparks/galeri-www/releases/latest'
-  return request(url, function () {
-    const versionEl = document.getElementById('version')
-    versionEl.href = this.response.html_url
-    versionEl.textContent = 'Version ' + this.response.tag_name.slice(1)
-
-    const macURL = getMacDownloadURL(this.response.tag_name)
-    for (const el of document.querySelectorAll('.downloads')) {
-      el.querySelector('#download-mac').href = macURL
-    }
-  })
-}
-
-getWikiJSON()
-getLatestVersion()
-</script>
 
 </html>
