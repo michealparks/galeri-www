@@ -1,27 +1,28 @@
 {
   "name": "galeri-www",
-  "version": "0.0.3",
-  "description": "The code behind galeri.io",
-  "main": "index.js",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview",
-    "gh-pages": "gh-pages -d public"
+    "start": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "lint": "eslint --ignore-path .gitignore ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/michealparks/galeri-www.git"
-  },
-  "author": "Micheal Parks",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/michealparks/galeri-www/issues"
-  },
-  "homepage": "https://github.com/michealparks/galeri-www#readme",
   "devDependencies": {
-    "gh-pages": "^3.1.0",
-    "typescript": "^4.2.4",
-    "vite": "^2.3.3"
+    "@sveltejs/adapter-static": "^1.0.0-next.11",
+    "@sveltejs/kit": "next",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "svelte": "^3.34.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fontsource/fira-mono": "^4.2.2",
+    "@lukeed/uuid": "^2.0.0",
+    "cookie": "^0.4.1"
   }
 }

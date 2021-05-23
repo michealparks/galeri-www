@@ -1,0 +1,74 @@
+
+@media (min-width: 700px) {
+  body {
+    font-size: 120%;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 140%;
+  }
+}
+
+header a,
+.downloads a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.downloads a:hover {
+  text-decoration: none !important;
+}
+
+.downloads {
+  display: flex;
+  justify-content: center;
+}
+
+main p,
+main h2,
+main small {
+  font-weight: 200;
+  letter-spacing: 0.4px;
+  font-family: Helvetica Neue, Lato, -apple-system, BlinkMacSystemFont, Helvetica;
+}
+
+.section h2 {
+  font-size: 1.9em;
+  font-weight: 100;
+  margin-top: 0;
+}
+
+.section p {
+  line-height: 1.6;
+  font-size: 0.75em;
+}
+
+@media (max-width: 800px) {
+  .section p {
+    font-size: 1em;
+  }
+}
+
+
+
+.section--bg-image .block {
+  z-index: 1;
+}
+
+.section--bg-image .background-mask {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.section--bg-image h2,
+.section--bg-image p {
+  max-width: 450px;
+}
+
+.section--bg-image a {
+  color: #bbb !important;
+}
+
+
+
