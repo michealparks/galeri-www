@@ -10,21 +10,21 @@ import Downloads from "$lib/Downloads.svelte"
   <div>
     <h1>Galeri</h1>
     <p>A perpetual artwork streaming machine.</p>
-
     <Downloads />
   </div>
 
   <small class='version'>
-    <a id='version' target='_tab' href={$versions.href || ''}>{$versions.tag || ''}</a>
+    <a target='_tab' href={$versions.href || ''}>
+      Version {$versions.tag || ''}
+    </a>
   </small>
 
-  <svg class="see-more icon-arrow-down">
-    <use xlink:href="#icon-arrow-down"></use>
+  <svg class='see-more'>
+    <use xlink:href='#icon-arrow-down' />
   </svg>
 
   <small class='issues'>
-    <a href='https://github.com/michealparks/galeri-www/issues' target='_tab'>
-      <span class='icon-github'></span>
+    <a target='_tab' href='https://github.com/michealparks/galeri-www/issues'>
       Report an issue
     </a>
   </small>
@@ -41,7 +41,6 @@ header {
   text-align: center;
 }
 
-
 h1 {
   margin: 0;
   font-weight: 300;
@@ -53,9 +52,9 @@ p {
   font-size: 1.2em;
 }
 
-header .version,
-header .issues,
-header .see-more {
+.version,
+.issues,
+.see-more {
   position: absolute;
   bottom: 20px;
   font-size: 17px;
@@ -76,5 +75,4 @@ header .see-more {
 .issues {
   right: 20px;
 }
-
 </style>

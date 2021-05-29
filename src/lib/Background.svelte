@@ -27,14 +27,14 @@
 
 <div
   class:ready
-  class='background-image'
+  class='bg-image'
   style={src ? `background-image:url(${src})` : undefined}
 />
-<div class='background-mask' />
+<div class='bg-mask' />
 
 <style>
-.background-image,
-.background-mask {
+.bg-image,
+.bg-mask {
   position: absolute;
   left: 0;
   top: 0;
@@ -42,7 +42,7 @@
   height: 100%;
 }
 
-.background-image {
+.bg-image {
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -50,7 +50,7 @@
   z-index: -2;
 }
 
-.background-mask {
+.bg-mask {
   background-color: rgba(0,0,0,0.45);
   z-index: -1;
 }
